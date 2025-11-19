@@ -26,6 +26,9 @@
 
   <body>
     <%= render 'shared/flash_message' %>
+    <% if user_signed_in? %>
+    <%= render 'shared/navigation_tab' %>
+    <% end %>
     <%= yield %>
     <%= render "shared/footer" %>
   </body>
