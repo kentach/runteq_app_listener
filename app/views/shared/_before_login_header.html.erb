@@ -1,0 +1,23 @@
+<header class="lp-header fixed-header">
+  <div class="logo-area">
+    <%= link_to root_path, class: "logo-link" do %>
+      <span class="logo-text">Listener</span>
+    <% end %>
+  </div>
+
+  <button class="hamburger" id="hamburger-btn" aria-label="メニューを開く">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="hamburger-menu" id="hamburger-menu">
+    <ul>
+      <li><%= link_to "Listenerとは", "#" %></li>
+      <li><%= link_to "Listenerの特徴", "#" %></li>
+      <li><%= link_to "利用規約", "#" %></li>
+      <li><%= link_to "よくある質問", "#" %></li>
+      <li><%= link_to "ログインする", new_user_session_path %></li>
+    </ul>
+  </div>
+</header>
