@@ -1,0 +1,11 @@
+ja:
+  devise:
+    registrations:
+      signed_up: 'アカウント登録が完了しました。'
+      failure: 'アカウントの登録に失敗しました。入力内容を確認してください。'
+    sessions:
+      signed_in: 'ログインしました。'
+      signed_out: 'ログアウトしました。'
+      failure: 'ログインに失敗しました。入力内容を確認してください。'
+
+  
