@@ -1,21 +1,69 @@
-.top-wrapper {
-  background-image: url('top.jpg');
-  height: calc(100vh - 134px);
-  position: relative;
-  background-position: center;
+.scroll-container {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  flex-wrap: nowrap;
+}
 
-  .top-inner-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    text-align: center;
-    font-size: 3rem;
-    color: white;
+.section-title {
+  font-weight: 700; /* 太字 */
+  font-size: 1.5rem; /* 少し大きめ */
+  margin-bottom: 1rem; /* 下の余白 */
+  color: #333; /* 必要に応じて文字色 */
+}
 
-    @media screen and (max-width: 767px) {
-      font-size: 2rem;
-    }
+
+.scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.textbook-card {
+  flex: 0 0 auto;
+  width: 180px; /* PC用デフォルト幅 */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.textbook-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border: none;
+  box-shadow: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.textbook-card-link:hover .textbook-image {
+  transform: scale(1.03);
+}
+
+/* === スマホ（600px以下） === */
+@media (max-width: 600px) {
+  .textbook-card {
+    width: 30vw; /* より小さくして横2枚が余裕で並ぶ */
+    min-width: 90px; /* これ以上小さくならないように */
   }
+
+  .scroll-container {
+    gap: 0.3rem; /* カード間の隙間もさらに少し狭く */
+  }
+
+  .section-title {
+    font-size: 1.3rem; /* 小さめに調整 */
+    margin-bottom: 0.8rem;
+  }
+
+  .scroll-wrapper {
+    margin-bottom: 1rem; /* セクション間の余白調整 */
+  }
+
 }

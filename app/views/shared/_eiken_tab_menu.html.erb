@@ -1,0 +1,10 @@
+<div id="levelTabs" class="scroll-tabs mt-4 mb-3 border-bottom">
+    <% @textbooks_by_level.keys.each_with_index do |level, i| %>
+      <% tab_id = "tab-#{i}" %>
+      <button
+        class="tab <%= 'active' if i.zero? %>"
+        data-target="<%= tab_id %>">
+        <%= level %>
+      </button>
+    <% end %>
+</div>

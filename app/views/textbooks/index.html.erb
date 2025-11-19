@@ -1,0 +1,27 @@
+<div class="container" style="margin-top: 30px;">
+<!-- タブ -->
+<%= render "shared/eiken_tab_menu"%>
+<!-- コンテンツ -->
+<div class="tab-contents">
+  <% @textbooks_by_level.each_with_index do |(level, textbooks), i| %>
+    <% tab_id = "tab-#{i}" %>
+    <div class="tab-pane <%= 'active' if i.zero? %>" id="<%= tab_id %>">
+      <h3 class="text-center fw-bold mb-3"><%= level %></h3>
+      <div class="d-flex justify-content-center flex-wrap gap-3">
+        <% textbooks.each do |textbook| %>
+          <div class="text-center" style="width:200px;">
+            <%= link_to textbook_path(textbook), class: "text-decoration-none d-block" do %>
+              <%= image_tag textbook.cover_image,
+                  alt: textbook.name,
+                  class: "img-fluid rounded shadow-sm hover-zoom",
+                  style: "width:100%; height:auto; max-height:300px; object-fit:contain;" %>
+              <p class="mt-2 mb-0 fw-semibold text-dark"><%= textbook.name %></p>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>
+<%= render "shared/navigation_tab" %>

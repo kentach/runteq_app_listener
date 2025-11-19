@@ -6,7 +6,7 @@
       <div>ホーム</div>
     <% end %>
 
-    <%= link_to "#", 
+    <%= link_to textbooks_path, 
         class: "tab-item text-center mx-3 #{current_page?("#") ? 'active' : ''}" do %>
       <i class="bi bi-book"></i>
       <div>テキスト</div>
