@@ -56,4 +56,6 @@
 【音声再生】 Javascript
 【いいね機能】 Gem acts_as_votable：いいね機能に特化したGem
 【データベース】 MySQL
-【Figma】 https://www.figma.com/design/TKSV1NPatLLnkgQwsVt0BA/%E7%84%A1%E9%A1%8C?node-id=31-935&t=QSRGS9vp4NHPfRx2-1
+
+## 画面遷移図
+https://www.figma.com/design/TKSV1NPatLLnkgQwsVt0BA/%E7%84%A1%E9%A1%8C?node-id=31-935&t=QSRGS9vp4NHPfRx2-1
