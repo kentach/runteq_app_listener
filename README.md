@@ -1,5 +1,8 @@
 # runteq_app_listener
 
+## 画面遷移図
+https://www.figma.com/design/TKSV1NPatLLnkgQwsVt0BA/%E7%84%A1%E9%A1%8C?node-id=31-935&t=QSRGS9vp4NHPfRx2-1
+
 ## サービス概要
 アプリ名：Listener（リスナー）
 本アプリの詳細：
@@ -48,7 +51,6 @@
 ・テキストの動画（Youtube）の閲覧可 
 ・学習記録を残す（学習したテキスト名、音声番号、学習した回数）
 
-
 ## 使用する技術スタック
 【ユーザー登録・ログイン】 Gem devise
 【音声管理】 Gem active_storage：音声ファイルの保存
@@ -56,6 +58,3 @@
 【音声再生】 Javascript
 【いいね機能】 Gem acts_as_votable：いいね機能に特化したGem
 【データベース】 MySQL
-
-## 画面遷移図
-https://www.figma.com/design/TKSV1NPatLLnkgQwsVt0BA/%E7%84%A1%E9%A1%8C?node-id=31-935&t=QSRGS9vp4NHPfRx2-1
