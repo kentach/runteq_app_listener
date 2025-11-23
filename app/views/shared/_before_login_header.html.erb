@@ -5,13 +5,13 @@
     <% end %>
   </div>
 
-  <button class="hamburger" id="hamburger-btn" aria-label="メニューを開く">
+  <button class="hamburger" id="hamburger-btn" aria-expanded="false" aria-label="メニューを開く">
     <span></span>
     <span></span>
     <span></span>
   </button>
 
-  <div class="hamburger-menu" id="hamburger-menu">
+  <nav class="hamburger-menu" id="hamburger-menu">
     <ul>
       <li><%= link_to "Listenerとは", "#" %></li>
       <li><%= link_to "Listenerの特徴", "#" %></li>
@@ -19,5 +19,7 @@
       <li><%= link_to "よくある質問", "#" %></li>
       <li><%= link_to "ログインする", new_user_session_path %></li>
     </ul>
-  </div>
+  </nav>
+
+  <div id="menu-overlay" class="menu-overlay"></div>
 </header>

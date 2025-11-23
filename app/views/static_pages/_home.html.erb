@@ -1,0 +1,31 @@
+<section class="hero-section d-flex align-items-center justify-content-center min-vh-100 bg-gradient text-center">
+  <div class="container">
+    <h1 class="hero-title fw-bold mb-4">
+      <span class="text-gradient d-block">
+        英語音声学習アプリ<br>
+        Listenerへようこそ!
+      </span>
+    </h1>
+
+    <p class="hero-sub fs-5 fw-bold text-dark mb-4">
+      「音読」✖️「シャドーイング」で<br>
+      「リスニング力」と「リーディング力」を同時に鍛える<br>
+      新しい英語トレーニングアプリ。
+    </p>
+
+    <!-- CTAボタン -->
+    <div class="cta-buttons d-flex justify-content-center flex-wrap gap-3 mb-3">
+      <%= link_to "今すぐListenerをはじめる", new_user_registration_path,
+          class: "btn btn-danger btn-lg rounded-3 fw-bold px-4 py-2",
+          aria: { label: "今すぐListenerをはじめる（新規登録）" } %>
+
+      <%= link_to "ログインする", new_user_session_path,
+          class: "btn btn-outline-danger btn-lg rounded-3 fw-bold px-4 py-2",
+          aria: { label: "ログインする" } %>
+    </div>
+
+    <p class="hero-note text-muted small">
+      すべての機能が使い放題・追加費用ゼロ
+    </p>
+  </div>
+</section>

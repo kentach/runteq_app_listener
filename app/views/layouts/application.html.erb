@@ -4,6 +4,7 @@
     <title><%= content_for(:title) || "Myapp" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -16,19 +17,27 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
-  <header>
-    <% if user_signed_in? %>
-      <%= render "shared/header" %>
-    <% else %>
-      <%= render "shared/before_login_header" %>
-    <% end %>
-  </header>
 
   <body>
+    <header>
+      <% if user_signed_in? %>
+        <%= render "shared/header" %>
+      <% else %>
+        <%= render "shared/before_login_header" %>
+      <% end %>
+    </header>
+
     <%= render 'shared/flash_message' %>
-    <% if user_signed_in? %>
-    <%= render 'shared/navigation_tab' %>
-    <% end %>
-    <%= yield %>
+
+    <main class="container mt-4">
+      <% if devise_controller? %>
+        <%= yield %> 
+      <% elsif user_signed_in? %>
+        <%= yield %> 
+      <% else %>
+        <%= render "static_pages/home" %> 
+      <% end %>
+    </main>
   </body>
 </html>
+

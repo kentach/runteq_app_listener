@@ -1,31 +1,47 @@
-    <div class="container" style="max-width: 600px; margin-top: 30px;">
-    <!-- 一覧へ戻るリンク -->
-    <h5>
-        <%= link_to "＜戻る", textbooks_path, style: "color: black; text-decoration: none;" %>
-    </h5>
-    </div>
+<div class="container" style="max-width: 600px; margin-top: 30px;">
 
-<!-- 教材情報 -->
-    <div class="d-flex flex-column align-items-center mt-3">
-    <div class="row justify-content-center">
-        <div class="col-md-4 text-center mb-3">
-        <div class="textbook-image-container" style="overflow: hidden; max-width: 150px; margin: 0 auto;">
-            <%= image_tag @textbook.cover_image, alt: @textbook.name, class: "img-fluid rounded", style: "width: 100%; height: auto; object-fit: contain;" %>
-        </div>
-        </div>
+  <!-- 戻るボタン -->
+<%= link_to "＜戻る", root_path, class: "text-dark text-decoration-none" %>
 
-        <div class="col-md-8 d-flex flex-column justify-content-center text-start">
+  <!-- 教材情報 -->
+  <div class="d-flex flex-column align-items-center mt-3 w-100">
+    <div class="row justify-content-center w-100">
+      <div class="col-md-4 text-center mb-3">
+        <div class="textbook-image-container mx-auto" style="max-width: 150px; overflow: hidden;">
+          <%= image_tag @textbook.cover_image, alt: @textbook.name, class: "img-fluid rounded", style: "object-fit: contain;" %>
+        </div>
+      </div>
+      <div class="col-md-8 d-flex flex-column justify-content-center text-start">
         <h2 class="mb-2" style="font-size: 1.75rem;"><%= @textbook.name %></h2>
         <p class="text-muted mb-0" style="font-size: 1.1rem;">レベル: <%= @textbook.level %></p>
-        </div>
+      </div>
     </div>
-    </div>
+  </div>
 
-<!-- ===== タブメニュー ===== -->
-    <div id="levelTabs" class="scroll-tabs mt-4 mb-3 border-bottom">
+  <!-- タブメニュー -->
+  <div id="levelTabs" class="scroll-tabs mt-4 mb-3 border-bottom">
     <% ["長文", "リスニング", "お気に入り"].each_with_index do |series, i| %>
-        <button class="tab <%= 'active' if i.zero? %>" data-target="<%= series.downcase %>">
-        <%= series %>
-        </button>
+      <button class="tab <%= 'active' if i.zero? %>" data-target="<%= series.downcase %>"><%= series %></button>
     <% end %>
-    </div>
+  </div>
+
+  <!-- タブコンテンツ -->
+  <div class="tab-content w-100 d-flex flex-column align-items-center">
+    <% ["長文", "リスニング", "お気に入り"].each_with_index do |series, i| %>
+      <div id="<%= series.downcase %>" class="tab-pane <%= 'active' if i.zero? %>" style="max-width: 700px; width: 100%;">
+        <% @chapters.where(series: series).each do |chapter| %>
+          <div class="episode-card d-flex justify-content-between align-items-center mb-3 p-2 border rounded shadow-sm">
+            <div class="episode-info flex-grow-1">
+                <h5 class="episode-title mb-1" style="font-size: 0.95rem;">
+                  <%= chapter.audios.any? ? 
+                        link_to(chapter.title, textbook_chapter_audio_path(@textbook, chapter, chapter.audios.first), style: "text-decoration: none; color: inherit;") : 
+                        chapter.title %>
+                </h5>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= render "shared/footer" %>
