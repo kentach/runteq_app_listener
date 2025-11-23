@@ -1,20 +1,20 @@
-<section class="hero-section d-flex align-items-center justify-content-center min-vh-100 bg-gradient text-center">
-  <div class="container">
+<section class="hero-section d-flex align-items-start justify-content-center py-5 bg-gradient text-center">
+  <div class="container px-3">
     <h1 class="hero-title fw-bold mb-4">
-      <span class="text-gradient d-block">
+      <span class="text-gradient d-block fs-2 fs-md-1">
         英語音声学習アプリ<br>
         Listenerへようこそ!
       </span>
     </h1>
 
-    <p class="hero-sub fs-5 fw-bold text-dark mb-4">
+    <p class="hero-sub fs-6 fs-md-5 fw-bold text-dark mb-4">
       「音読」✖️「シャドーイング」で<br>
       「リスニング力」と「リーディング力」を同時に鍛える<br>
       新しい英語トレーニングアプリ。
     </p>
 
     <!-- CTAボタン -->
-    <div class="cta-buttons d-flex justify-content-center flex-wrap gap-3 mb-3">
+    <div class="cta-buttons d-flex flex-column flex-md-row justify-content-center gap-3 mb-3">
       <%= link_to "今すぐListenerをはじめる", new_user_registration_path,
           class: "btn btn-danger btn-lg rounded-3 fw-bold px-4 py-2",
           aria: { label: "今すぐListenerをはじめる（新規登録）" } %>
@@ -29,3 +29,22 @@
     </p>
   </div>
 </section>
+
+<style>
+.hero-section {
+  background: linear-gradient(135deg, #ffe259 0%, #ffa751 100%);
+  color: #000;
+  min-height: auto; /* 高さ制限を解除 */
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .hero-title { font-size: 1.5rem; }
+  .hero-sub { font-size: 0.9rem; }
+}
+</style>

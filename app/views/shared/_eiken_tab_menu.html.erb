@@ -1,4 +1,5 @@
-<div id="levelTabs" class="scroll-tabs mt-4 mb-3 border-bottom">
+<div class="tabs-wrapper mb-4" style="margin-top: 50px;">
+  <div class="scroll-tabs" id="levelTabs">
     <% @textbooks_by_level.keys.each_with_index do |level, i| %>
       <% tab_id = "tab-#{i}" %>
       <button
@@ -7,4 +8,5 @@
         <%= level %>
       </button>
     <% end %>
+  </div>
 </div>

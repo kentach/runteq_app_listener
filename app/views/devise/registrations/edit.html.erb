@@ -48,17 +48,12 @@
     <hr class="my-4">
 
     <!-- アカウント削除 -->
-    <h3 class="mt-4 text-center">アカウント削除</h3>
-    <div class="d-grid mb-3">
+    <h3 class="mt-5 text-center">アカウント削除</h3>
+    <div class="d-grid mb-5 text-center">
       <%= button_to "アカウントを削除する", registration_path(resource_name),
           method: :delete,
           data: { confirm: "本当に削除しますか？" },
           class: "btn btn-danger" %>
     </div>
-
-    <div class="text-center">
-      <%= link_to "戻る", request.referer || root_path, class: "btn btn-secondary" %>
-    </div>
-
   </div>
 </div>
