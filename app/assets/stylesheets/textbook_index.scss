@@ -1,10 +1,13 @@
-
 .scroll-tabs {
+  display: flex;
   overflow-x: auto;
-  white-space: nowrap;
-  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: 8px;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  flex-wrap: nowrap;
+  
+  /* スクロールスナップ追加 */
+  scroll-snap-type: x mandatory; 
 }
 
 .scroll-tabs::-webkit-scrollbar {
@@ -12,6 +15,8 @@
 }
 
 .tab {
+  flex: 0 0 auto;
+  white-space: nowrap;
   display: inline-block;
   background: none;
   border: none;
@@ -21,8 +26,10 @@
   padding: 8px 14px;
   border-radius: 20px;
   cursor: pointer;
-  white-space: nowrap;
   transition: all 0.2s ease;
+
+  /* スクロールスナップ位置 */
+  scroll-snap-align: start;
 }
 
 .tab.active {
@@ -52,10 +59,10 @@
 
 @media (max-width: 768px) {
   .scroll-tabs {
-    gap: 0.6rem;
+    gap: 0.4rem;
   }
   .tab {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     padding: 6px 10px;
   }
 }
