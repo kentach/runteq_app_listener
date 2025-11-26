@@ -1,10 +1,12 @@
-
 <div class="container" style="margin-top: 80px;">
 
   <!-- 音トレ道場 -->
   <h2 class="section-title">音トレ道場</h2>
+
   <% first_ontore = @ontore_textbooks.first %>
-  <%= tag.link rel: "preload", as: "image", href: asset_path(first_ontore.cover_image) %>
+  <% if first_ontore&.cover_image.present? %>
+    <%= tag.link rel: "preload", as: "image", href: asset_path(first_ontore.cover_image) %>
+  <% end %>
 
   <div class="scroll-wrapper d-flex overflow-auto gap-3">
     <% @ontore_textbooks.each_with_index do |textbook, index| %>
@@ -22,8 +24,11 @@
 
   <!-- リズムでマスター -->
   <h2 class="section-title mt-4">リズムでマスター</h2>
-  <% first_rhythm = @rhythm_textbooks.first %>
-  <%= tag.link rel: "preload", as: "image", href: asset_path(first_rhythm.cover_image) %>
+
+  <% first_ontore = @ontore_textbooks.first %>
+  <% if first_ontore&.cover_image.present? %>
+    <%= tag.link rel: "preload", as: "image", href: asset_path(first_ontore.cover_image) %>
+  <% end %>
 
   <div class="scroll-wrapper d-flex overflow-auto gap-3">
     <% @rhythm_textbooks.each_with_index do |textbook, index| %>
@@ -39,4 +44,5 @@
     <% end %>
   </div>
 </div>
+
 <%= render "shared/navigation_tab" %>
