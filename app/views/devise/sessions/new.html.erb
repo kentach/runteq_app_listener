@@ -1,20 +1,21 @@
-<div class="container d-flex justify-content-center">
+<div class="container d-flex justify-content-center py-5">
   <div class="col-12 col-md-6 col-lg-4">
 
-    <h2 class="mb-4 text-center">ログイン</h2>
+    <h2 class="mb-4 text-center fw-bold display-6">ログイン</h2>
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name),
+                 html: { class: "shadow-sm p-4 rounded-4 bg-white" }) do |f| %>
 
       <!-- メール -->
       <div class="mb-3">
-        <%= f.label :email, "メールアドレス", class: "form-label" %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        <%= f.label :email, "メールアドレス", class: "form-label fw-semibold" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control rounded-3 shadow-sm" %>
       </div>
 
       <!-- パスワード -->
       <div class="mb-3">
-        <%= f.label :password, "パスワード", class: "form-label" %>
-        <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+        <%= f.label :password, "パスワード", class: "form-label fw-semibold" %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "form-control rounded-3 shadow-sm" %>
       </div>
 
       <!-- Remember me -->
@@ -26,8 +27,8 @@
       <% end %>
 
       <!-- ログインボタン -->
-      <div class="d-grid">
-        <%= f.submit "ログイン", class: "btn btn-primary" %>
+      <div class="d-grid mt-3">
+        <%= f.submit "ログイン", class: "btn btn-primary btn-lg fw-bold rounded-pill shadow-sm" %>
       </div>
     <% end %>
 

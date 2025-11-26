@@ -23,15 +23,15 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    favorite = @audio.favorites.find_by(user: current_user)
     favorite = current_user.favorites.find_by(audio: @audio)
-
     favorite&.destroy
+
     respond_to do |format|
       format.turbo_stream
       format.html { redirect_back fallback_location: root_path }
     end
   end
+
 
 
   private

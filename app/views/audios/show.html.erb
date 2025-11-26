@@ -1,8 +1,5 @@
 <div class="container" style="max-width: 600px; margin-top: 30px;">
-
-<div class="mb-3">
-  <%= link_to "＜戻る", :back, class: "text-dark text-decoration-none d-inline-block" %>
-</div>
+<%= link_to "＜音声一覧", textbook_path(@textbook), class: "text-dark text-decoration-none" %>
 
   <!-- 章情報（教材画像＋タイトル＋教材名） -->
   <div class="d-flex flex-column align-items-center mt-3 w-100">
@@ -21,33 +18,6 @@
       </div>
     </div>
   </div>
-
-  <!-- メイン音声プレイヤー -->
-  <div class="card shadow rounded-4 p-3 mb-4" style="background:#f8f9fb;">
-    <audio controls preload="metadata" style="width:100%;">
-      <source src="/audio_files/<%= @audio.file_name %>" type="audio/mpeg">
-      お使いのブラウザは audio タグに対応していません。
-    </audio>
-  </div>
-
-  <!-- 複数音声がある場合の「下部カード型リスト」 -->
-  <% if @chapter.audios.count > 1 %>
-    <h5 class="mb-3">この章の音声一覧</h5>
-
-    <% @chapter.audios.each do |audio| %>
-      <div class="card p-2 mb-2 shadow-sm
-                  <%= 'bg-dark text-white' if audio.id == @audio.id %>">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <span style="font-size: 0.9rem; font-weight:500;"><%= audio.file_name %></span>
-
-          <%= link_to "▶ 再生", 
-                textbook_chapter_audio_path(@chapter.textbook, @chapter, audio),
-                class: "btn btn-outline-primary btn-sm",
-                style: audio.id == @audio.id ? 'border-color:white; color:white;' : '' %>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
+  <%= render "audios/audio_list"%>
+  <%= render "audios/audio_tab" %>
 </div>
-<%= render "shared/navigation_tab" %>

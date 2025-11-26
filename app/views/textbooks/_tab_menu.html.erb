@@ -20,7 +20,8 @@
 
           <% chapters_to_show.each do |chapter| %>
             <% audio = chapter.audios.first %>
-            <div class="episode-card d-flex justify-content-between align-items-center mb-3 p-2 border rounded shadow-sm">
+            <div class="episode-card d-flex justify-content-between align-items-center mb-3 p-2 border rounded shadow-sm"
+                id="<%= dom_id(chapter, :episode_card) %>">
 
               <!-- エピソードタイトル -->
               <div class="episode-info flex-grow-1">
@@ -30,7 +31,7 @@
               </div>
 
               <!-- お気に入りボタン -->
-              <%= render "audios/favorite_button", audio: audio %>
+              <%= render "audios/favorite_button", audio: audio, chapter: chapter %>
             </div>
           <% end %>
         </div>

@@ -1,13 +1,13 @@
-<section class="hero-section d-flex align-items-start justify-content-center py-5 bg-gradient text-center">
-  <div class="container px-3">
+<section class="hero-section d-flex align-items-center justify-content-center py-5 text-center">
+  <div class="container px-4">
     <h1 class="hero-title fw-bold mb-4">
-      <span class="text-gradient d-block fs-2 fs-md-1">
+      <span class="text-gradient d-block display-6 display-md-4">
         英語音声学習アプリ<br>
-        Listenerへようこそ!
+        <span class="highlight">Listener</span>へようこそ!
       </span>
     </h1>
 
-    <p class="hero-sub fs-6 fs-md-5 fw-bold text-dark mb-4">
+    <p class="hero-sub fs-6 fs-md-5 fw-medium text-dark mb-4 lh-lg">
       「音読」✖️「シャドーイング」で<br>
       「リスニング力」と「リーディング力」を同時に鍛える<br>
       新しい英語トレーニングアプリ。
@@ -15,13 +15,13 @@
 
     <!-- CTAボタン -->
     <div class="cta-buttons d-flex flex-column flex-md-row justify-content-center gap-3 mb-3">
-      <%= link_to "今すぐListenerをはじめる", new_user_registration_path,
-          class: "btn btn-danger btn-lg rounded-3 fw-bold px-4 py-2",
-          aria: { label: "今すぐListenerをはじめる（新規登録）" } %>
+      <%= link_to "今すぐ始める", new_user_registration_path,
+          class: "btn btn-primary btn-lg rounded-pill fw-bold px-5 py-3 shadow-sm",
+          aria: { label: "新規登録" } %>
 
-      <%= link_to "ログインする", new_user_session_path,
-          class: "btn btn-outline-danger btn-lg rounded-3 fw-bold px-4 py-2",
-          aria: { label: "ログインする" } %>
+      <%= link_to "ログイン", new_user_session_path,
+          class: "btn btn-outline-primary btn-lg rounded-pill fw-bold px-5 py-3",
+          aria: { label: "ログイン" } %>
     </div>
 
     <p class="hero-note text-muted small">
@@ -32,19 +32,49 @@
 
 <style>
 .hero-section {
-  background: linear-gradient(135deg, #ffe259 0%, #ffa751 100%);
-  color: #000;
-  min-height: auto; /* 高さ制限を解除 */
+  background: linear-gradient(135deg, #f9fafb 0%, #e9eff5 100%);
+  color: #1c1c1c;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .text-gradient {
-  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  background: linear-gradient(90deg, #4f46e5, #06b6d4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+.highlight {
+  color: #ef4444;
+}
+
+.hero-sub {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #4f46e5, #06b6d4);
+  border: none;
+}
+
+.btn-outline-primary {
+  border: 2px solid #4f46e5;
+  color: #4f46e5;
+}
+
+.btn-outline-primary:hover {
+  background: #4f46e5;
+  color: #fff;
+}
+
 @media (max-width: 768px) {
-  .hero-title { font-size: 1.5rem; }
-  .hero-sub { font-size: 0.9rem; }
+  .hero-title { font-size: 1.8rem; }
+  .hero-sub { font-size: 1rem; }
+  .btn-lg { padding: 0.75rem 2rem; font-size: 0.95rem; }
 }
 </style>

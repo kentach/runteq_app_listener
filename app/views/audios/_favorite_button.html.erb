@@ -1,13 +1,13 @@
 <div id="<%= dom_id(audio, :favorite_button) %>">
   <% if current_user.favorited?(audio) %>
-    <%= button_to textbook_chapter_audio_favorite_path(audio.chapter.textbook, audio.chapter, audio),
+    <%= button_to textbook_chapter_audio_favorite_path(audio.chapter.textbook, audio.chapter, audio, tab: 'お気に入り'),
                   method: :delete,
                   class: "btn btn-sm btn-warning",
                   form: { data: { turbo: true } } do %>
       ★
     <% end %>
   <% else %>
-    <%= button_to textbook_chapter_audio_favorite_path(audio.chapter.textbook, audio.chapter, audio),
+    <%= button_to textbook_chapter_audio_favorite_path(audio.chapter.textbook, audio.chapter, audio, tab: 'お気に入り'),
                   method: :post,
                   class: "btn btn-sm btn-outline-warning",
                   form: { data: { turbo: true } } do %>
