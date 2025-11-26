@@ -3,10 +3,10 @@
   <!-- 音トレ道場 -->
   <h2 class="section-title">音トレ道場</h2>
 
-  <% first_ontore = @ontore_textbooks.first %>
-  <% if first_ontore&.cover_image.present? %>
-    <%= tag.link rel: "preload", as: "image", href: asset_path(first_ontore.cover_image) %>
-  <% end %>
+    <% first_ontore = @ontore_textbooks.first %>
+    <% if first_ontore&.cover_image.present? %>
+      <%= tag.link rel: "preload", as: "image", href: asset_path(first_ontore.cover_image) %>
+    <% end %>
 
   <div class="scroll-wrapper d-flex overflow-auto gap-3">
     <% @ontore_textbooks.each_with_index do |textbook, index| %>
@@ -25,9 +25,9 @@
   <!-- リズムでマスター -->
   <h2 class="section-title mt-4">リズムでマスター</h2>
 
-  <% first_ontore = @ontore_textbooks.first %>
-  <% if first_ontore&.cover_image.present? %>
-    <%= tag.link rel: "preload", as: "image", href: asset_path(first_ontore.cover_image) %>
+  <% first_rhythm = @rhythm_textbooks.first %>
+  <% if first_rhythm&.cover_image.present? %>
+    <%= tag.link rel: "preload", as: "image", href: asset_path(first_rhythm.cover_image) %>
   <% end %>
 
   <div class="scroll-wrapper d-flex overflow-auto gap-3">
