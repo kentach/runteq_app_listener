@@ -12,12 +12,11 @@
     <% @ontore_textbooks.each_with_index do |textbook, index| %>
       <%= link_to textbook_path(textbook), class: "textbook-card-link text-decoration-none" do %>
         <div class="textbook-card">
-          <%= image_tag textbook.cover_image,
-                        class: "textbook-image img-fluid",
-                        loading: (index == 0 ? "eager" : "lazy"),
-                        width: 300,
-                        height: 400 %>
-        </div>
+          <%= image_tag asset_path(textbook.cover_image),
+              class: "textbook-image img-fluid",
+              loading: (index == 0 ? "eager" : "lazy"),
+              width: 300,
+              height: 400 %>
       <% end %>
     <% end %>
   </div>
@@ -34,11 +33,11 @@
     <% @rhythm_textbooks.each_with_index do |textbook, index| %>
       <%= link_to textbook_path(textbook), class: "textbook-card-link text-decoration-none" do %>
         <div class="textbook-card">
-          <%= image_tag textbook.cover_image,
-                        class: "textbook-image img-fluid",
-                        loading: (index == 0 ? "eager" : "lazy"),
-                        width: 300,
-                        height: 400 %>
+          <%= image_tag asset_path(textbook.cover_image),
+              class: "textbook-image img-fluid",
+              loading: (index == 0 ? "eager" : "lazy"),
+              width: 300,
+              height: 400 %>
         </div>
       <% end %>
     <% end %>
