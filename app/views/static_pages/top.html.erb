@@ -3,20 +3,21 @@
   <!-- 音トレ道場 -->
   <h2 class="section-title">音トレ道場</h2>
 
-    <% first_ontore = @ontore_textbooks.first %>
-    <% if first_ontore&.cover_image.present? %>
-      <%= tag.link rel: "preload", as: "image", href: asset_path(first_ontore.cover_image) %>
-    <% end %>
+  <% first_ontore = @ontore_textbooks.first %>
+  <% if first_ontore&.cover_image.present? %>
+    <%= tag.link rel: "preload", as: "image", href: "/images/#{first_ontore.cover_image}" %>
+  <% end %>
 
   <div class="scroll-wrapper d-flex overflow-auto gap-3">
     <% @ontore_textbooks.each_with_index do |textbook, index| %>
       <%= link_to textbook_path(textbook), class: "textbook-card-link text-decoration-none" do %>
         <div class="textbook-card">
-          <%= image_tag asset_path(textbook.cover_image),
-              class: "textbook-image img-fluid",
-              loading: (index == 0 ? "eager" : "lazy"),
-              width: 300,
-              height: 400 %>
+          <%= image_tag "/images/#{textbook.cover_image}",
+                        class: "textbook-image img-fluid",
+                        loading: (index == 0 ? "eager" : "lazy"),
+                        width: 300,
+                        height: 400 %>
+        </div>
       <% end %>
     <% end %>
   </div>
@@ -26,22 +27,23 @@
 
   <% first_rhythm = @rhythm_textbooks.first %>
   <% if first_rhythm&.cover_image.present? %>
-    <%= tag.link rel: "preload", as: "image", href: asset_path(first_rhythm.cover_image) %>
+    <%= tag.link rel: "preload", as: "image", href: "/images/#{first_rhythm.cover_image}" %>
   <% end %>
 
   <div class="scroll-wrapper d-flex overflow-auto gap-3">
     <% @rhythm_textbooks.each_with_index do |textbook, index| %>
       <%= link_to textbook_path(textbook), class: "textbook-card-link text-decoration-none" do %>
         <div class="textbook-card">
-          <%= image_tag asset_path(textbook.cover_image),
-              class: "textbook-image img-fluid",
-              loading: (index == 0 ? "eager" : "lazy"),
-              width: 300,
-              height: 400 %>
+          <%= image_tag "/images/#{textbook.cover_image}",
+                        class: "textbook-image img-fluid",
+                        loading: (index == 0 ? "eager" : "lazy"),
+                        width: 300,
+                        height: 400 %>
         </div>
       <% end %>
     <% end %>
   </div>
+
 </div>
 
 <%= render "shared/navigation_tab" %>
