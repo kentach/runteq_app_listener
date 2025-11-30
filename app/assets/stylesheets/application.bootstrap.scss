@@ -1,8 +1,8 @@
-@import "bootstrap/scss/bootstrap";
-@import "bootstrap-icons/font/bootstrap-icons";
-@import "top";
-@import "textbook_index";
-@import "textbook_show";
-@import "navigation_tab";
-@import "before_login_header";
-@import "audio_tab";
+@use "bootstrap/scss/bootstrap";
+@use "bootstrap-icons/font/bootstrap-icons";
+@use "top";
+@use "textbook_index";
+@use "textbook_show";
+@use "navigation_tab";
+@use "before_login_header";
+@use "audio_tab";
