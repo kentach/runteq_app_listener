@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.2.3"
+gem "rails", "~> 8.1.1"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 # Use postgresql as the database for Active Record
@@ -25,7 +25,7 @@ gem "rubocop"
 # gem "kredis"
 gem 'devise'
 
-gem 'rails-i18n', '~> 7.0.0'
+gem 'rails-i18n', '~> 8.1.0'
 
 gem 'aws-sdk-s3'
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
